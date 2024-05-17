@@ -2,8 +2,8 @@ import Link from 'next/link';
 import styles from './featured.module.css';
 import Image from 'next/image';
 
-/* const getPost = async () => {
-    const response = await fetch(`http://localhost:3000/api/posts/6`, {
+const getPost = async () => {
+    const response = await fetch(`https://blogapp-zyp2.onrender.com/api/posts/6`, {
 
         next: { revalidate: 3600 }
     });
@@ -11,10 +11,10 @@ import Image from 'next/image';
         console.log("Failed fetching categories")
     }
     return response.json()
-}; */
+};
 
 const Featured = async () => {
-    // const post = await getPost();
+    const post = await getPost();
 
     return (
         <div className={styles.container}>
@@ -22,7 +22,7 @@ const Featured = async () => {
                 <b>Hey, Larisa here! </b>
                 Discover my stories and creative ideas.
             </h1>
-            {/* <div className={styles.post} key={post.id}>
+            <div className={styles.post} key={post.id}>
                 {
                     post.img &&
                     <div className={styles.imgContainer}>
@@ -38,7 +38,7 @@ const Featured = async () => {
                     }
                     <Link href={'/post/6'} className={styles.btn}>Read more</Link>
                 </div>
-            </div> */}
+            </div>
         </div>
     )
 };

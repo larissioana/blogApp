@@ -8,7 +8,7 @@ import { formatDate } from '@/utils/date';
 import Spinner from '../spinner/Spinner';
 import { useState } from 'react';
 
-/* const fetchData = async (url) => {
+const fetchData = async (url) => {
     const response = await fetch(url);
     const data = await response.json();
 
@@ -19,29 +19,29 @@ import { useState } from 'react';
 
     return data;
 };
- */
+
 const Comments = ({ postSlug }) => {
     const [desc, setDesc] = useState("");
 
     const { status } = useSession();
-    // const { data, mutate, isLoading } = useSWR(`http://localhost:3000/api/comments?postSlug=${postSlug}`, fetchData);
+    const { data, mutate, isLoading } = useSWR(`http://localhost:3000/api/comments?postSlug=${postSlug}`, fetchData);
 
     const handleChange = (e) => {
         setDesc(e.target.value);
     };
 
-    /*    const handleSubmit = async () => {
-           await fetch("/api/comments", {
-               method: "POST",
-               body: JSON.stringify({ desc, postSlug }),
-           });
-           mutate();
-           setDesc("");
-       }; */
+    const handleSubmit = async () => {
+        await fetch("https://blogapp-zyp2.onrender.com/api/comments", {
+            method: "POST",
+            body: JSON.stringify({ desc, postSlug }),
+        });
+        mutate();
+        setDesc("");
+    };
 
     return (
         <>
-            {/*  {
+            {
                 !isLoading ?
                     <div className={styles.container}>
                         <h1>Comments</h1>
@@ -85,7 +85,7 @@ const Comments = ({ postSlug }) => {
                     <div className={styles.spinner}>
                         <Spinner />
                     </div>
-            } */}
+            }
         </>
     )
 };
