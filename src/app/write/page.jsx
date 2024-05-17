@@ -71,23 +71,23 @@ const WritePage = () => {
             .replace(/[\s_-]+/g, "-")
             .replace(/^-+|-+$/g, "");
 
-    const handleSubmit = async () => {
-        const res = await fetch("/api/posts", {
-            method: "POST",
-            body: JSON.stringify({
-                title,
-                desc: value,
-                img: media,
-                slug: slugify(title),
-                catSlug: catSlug || "culture",
-            }),
-        });
-
-        if (res.status === 200) {
-            const data = await res.json();
-            router.push('/');
-        }
-    };
+    /*     const handleSubmit = async () => {
+            const res = await fetch("/api/posts", {
+                method: "POST",
+                body: JSON.stringify({
+                    title,
+                    desc: value,
+                    img: media,
+                    slug: slugify(title),
+                    catSlug: catSlug || "culture",
+                }),
+            });
+    
+            if (res.status === 200) {
+                const data = await res.json();
+                router.push('/');
+            }
+        }; */
     return (
         <div className={styles.container}>
             <input
@@ -139,12 +139,12 @@ const WritePage = () => {
                     placeholder='Tell your story...'
                 />
             </div>
-            <button
+            {/*  <button
                 className={styles.publish}
                 onClick={handleSubmit}
             >
                 Publish
-            </button>
+            </button> */}
         </div>
     )
 };

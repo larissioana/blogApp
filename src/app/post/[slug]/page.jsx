@@ -3,7 +3,7 @@ import styles from './page.module.css';
 import Menu from '../../components/menu/Menu';
 import Comments from '../../components/comments/Comments';
 import { formatDate } from '@/utils/date';
-
+/* 
 const getPost = async (slug) => {
     const response = await fetch(`http://localhost:3000/api/posts/${slug}`);
     if (!response.ok) {
@@ -11,14 +11,14 @@ const getPost = async (slug) => {
     }
     return response.json()
 };
-
+ */
 const SinglePage = async ({ params }) => {
-    const { slug } = params;
-    const post = await getPost(slug);
-
+    /*  const { slug } = params;
+     const post = await getPost(slug);
+  */
     return (
         <div className={styles.container}>
-            <div className={styles.infoContainer}>
+            {/*  <div className={styles.infoContainer}>
                 <div className={styles.textContainer}>
                     {
                         post.title &&
@@ -52,9 +52,9 @@ const SinglePage = async ({ params }) => {
                         <Image src={post.img} alt="" fill loading='eager' className={styles.image} />
                     }
                 </div>
-            </div>
+            </div> */}
             <div className={styles.content}>
-                <div className={styles.post}>
+                {/*  <div className={styles.post}>
                     {
                         post.desc &&
                         <div className={styles.description}>
@@ -68,8 +68,8 @@ const SinglePage = async ({ params }) => {
                     <div className={styles.comment}>
                         <Comments postSlug={slug} />
                     </div>
-                </div>
-                <Menu slug={slug} />
+                </div> */}
+                {/*   <Menu slug={slug} /> */}
             </div>
         </div>
     )
