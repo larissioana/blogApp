@@ -1,8 +1,9 @@
 "use client";
 import Image from 'next/image';
 import styles from './write.module.css';
+import dynamic from 'next/dynamic';
 import { useEffect, useState } from 'react';
-import ReactQuill from 'react-quill';
+const ReactQuill = dynamic(() => import("react-quill"));
 import 'react-quill/dist/quill.bubble.css';
 import {
     getStorage,
@@ -87,8 +88,6 @@ const WritePage = () => {
             router.push('/');
         }
     };
-
-    console.log({ media })
     return (
         <div className={styles.container}>
             <input
