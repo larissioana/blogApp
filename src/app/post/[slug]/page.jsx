@@ -3,12 +3,9 @@ import styles from './page.module.css';
 import Menu from '../../components/menu/Menu';
 import Comments from '../../components/comments/Comments';
 import { formatDate } from '@/utils/date';
-import { insertBreaks } from '@/utils/text';
 
 const getPost = async (slug) => {
-    const response = await fetch(`http://localhost:3000/api/posts/${slug}`, {
-        cache: "no-cache"
-    });
+    const response = await fetch(`http://localhost:3000/api/posts/${slug}`);
     if (!response.ok) {
         throw new Error("Failed fetching categories")
     }
@@ -18,7 +15,6 @@ const getPost = async (slug) => {
 const SinglePage = async ({ params }) => {
     const { slug } = params;
     const post = await getPost(slug);
-    console.log({ post })
 
     return (
         <div className={styles.container}>

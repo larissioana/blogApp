@@ -3,9 +3,8 @@ import Pagination from '../pagination/Pagination';
 import styles from './cardList.module.css';
 
 const getPosts = async (page, cat) => {
-    const response = await fetch(`http://localhost:3000/api/posts?page=${page}&cat=${cat || ""}`, {
-        cache: "no-cache"
-    });
+    const response = await fetch(`http://localhost:3000/api/posts?page=${page}&cat=${cat || ""}`);
+
     if (!response.ok) {
         console.log("Failed fetching categories")
     }

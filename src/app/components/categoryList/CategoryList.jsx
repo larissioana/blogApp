@@ -3,9 +3,7 @@ import styles from './categoryList.module.css';
 import Image from 'next/image';
 
 const getCategories = async () => {
-    const response = await fetch("http://localhost:3000/api/categories", {
-        cache: "no-cache"
-    });
+    const response = await fetch("http://localhost:3000/api/categories");
     if (!response.ok) {
         throw new Error("Failed fetching categories")
     }
