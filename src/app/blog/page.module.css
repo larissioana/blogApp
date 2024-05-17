@@ -1,0 +1,50 @@
+.content
+{
+    display: flex;
+    gap: 50px;
+}
+
+.title
+{
+    color: black;
+    padding: 5px 10px;
+    text-align: center;
+    text-transform: capitalize;
+    margin-top: 4rem;
+    font-size: clamp(1.3rem, 2vw, 1.9rem);
+}
+
+.title.fashion
+{
+    background-color: var(--fashion);
+}
+  
+.title.lifestyle
+{
+    background-color: var(--food);
+}
+  
+.title.travel 
+{
+    background-color: var(--travel);
+}
+  
+.title.culture
+{
+    background-color: var(--culture);
+}
+  
+.title.technology
+{
+    background-color: var(--coding);
+}
+
+@media screen and (max-width: 1000px)
+{
+    .content
+    {
+        flex-direction: column;
+    }
+}
+
+

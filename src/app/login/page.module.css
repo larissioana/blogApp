@@ -1,0 +1,40 @@
+.container
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 80px;
+}
+
+.wrapper
+{
+    background-color: var(--softBg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    color: var(--textColor);
+    border: 1px solid var(--textColor);
+    padding: 0rem .5rem;
+    margin-top: 3rem;
+}
+
+.socialButton
+{
+    padding: 20px;
+    width: 14rem;
+    border-radius: 5px;
+    border: none;
+    color: var(--textColor);
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.socialButton:first-child
+{
+    background-color: #ff5555;
+}
