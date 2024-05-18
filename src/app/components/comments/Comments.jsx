@@ -30,15 +30,15 @@ const Comments = ({ postSlug }) => {
         setDesc(e.target.value);
     };
 
-    /*     const handleSubmit = async () => {
-            await fetch("https://blog-app-blond-tau.vercel.app/api/comments", {
-                method: "POST",
-                body: JSON.stringify({ desc, postSlug }),
-            });
-            mutate();
-            setDesc("");
-        };
-     */
+    const handleSubmit = async () => {
+        await fetch("https://blog-app-blond-tau.vercel.app/api/comments", {
+            method: "POST",
+            body: JSON.stringify({ desc, postSlug }),
+        });
+        mutate();
+        setDesc("");
+    };
+
     return (
         <>
             {
