@@ -12,7 +12,14 @@ const nextConfig = {
                 hostname: 'firebasestorage.googleapis.com',
             },
         ],
-    }
+    },
+    webpack: (config, { dev, isServer }) => {
+        // Disable source maps in production
+        if (!dev) {
+            config.devtool = false;
+        }
+        return config;
+    },
 }
 
 module.exports = nextConfig
