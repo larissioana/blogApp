@@ -72,7 +72,7 @@ const WritePage = () => {
             .replace(/^-+|-+$/g, "");
 
     const handleSubmit = async () => {
-        const res = await fetch("https://blog-app-beige-psi.vercel.app/api/posts", {
+        const res = await fetch("https://blog-app-blond-tau.vercel.app/api/posts", {
             method: "POST",
             body: JSON.stringify({
                 title,

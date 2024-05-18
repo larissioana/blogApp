@@ -24,14 +24,14 @@ const Comments = ({ postSlug }) => {
     const [desc, setDesc] = useState("");
 
     const { status } = useSession();
-    const { data, mutate, isLoading } = useSWR(`https://blog-app-beige-psi.vercel.app/api/comments?postSlug=${postSlug}`, fetchData);
+    const { data, mutate, isLoading } = useSWR(`https://blog-app-blond-tau.vercel.app/api/comments?postSlug=${postSlug}`, fetchData);
 
     const handleChange = (e) => {
         setDesc(e.target.value);
     };
 
     const handleSubmit = async () => {
-        await fetch("https://blog-app-beige-psi.vercel.app/api/comments", {
+        await fetch("https://blog-app-blond-tau.vercel.app/api/comments", {
             method: "POST",
             body: JSON.stringify({ desc, postSlug }),
         });

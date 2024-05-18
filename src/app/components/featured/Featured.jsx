@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { getBase64 } from '@/utils/get-Base64';
 
 const getPost = async () => {
-    const response = await fetch(`https://blog-app-beige-psi.vercel.app/api/posts/6`, {
+    const response = await fetch(`https://blog-app-blond-tau.vercel.app/api/posts/6`, {
 
         next: { revalidate: 3600 }
     });
