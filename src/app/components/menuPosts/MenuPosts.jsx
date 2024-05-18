@@ -5,9 +5,7 @@ import styles from './menuPosts.module.css';
 import { formatDate } from "@/utils/date";
 
 const getPosts = async () => {
-    const response = await fetch(`https://blog-app-nine-sand.vercel.app/api/posts/`, {
-        cache: "no-cache"
-    });
+    const response = await fetch(`https://blog-app-nine-sand.vercel.app/api/posts/`);
     if (!response.ok) {
         throw new Error("Failed fetching categories")
     }
