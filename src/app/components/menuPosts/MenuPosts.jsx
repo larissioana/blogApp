@@ -3,23 +3,23 @@ import Link from "next/link";
 import Image from "next/image";
 import styles from './menuPosts.module.css';
 import { formatDate } from "@/utils/date";
-/* 
+
 const getPosts = async () => {
-    const response = await fetch(`https://blog-app-blond-tau.vercel.app/api/posts/`, {
+    const response = await fetch(`https://blog-app-git-main-larissioanas-projects.vercel.app/api/posts/`, {
         cache: "no-cache"
     });
     if (!response.ok) {
         throw new Error("Failed fetching categories")
     }
     return response.json()
-}; */
+};
 
 const MenuPosts = async () => {
-    //const posts = await getPosts();
+    const posts = await getPosts();
 
     return (
         <div className={styles.items}>
-            {/*   {
+            {
                 posts?.posts.filter((post) => post.views > 5)
                     .map((post) => {
                         return <Link href={`/post/${post.slug}`} className={styles.item} key={post.id}>
@@ -38,7 +38,7 @@ const MenuPosts = async () => {
                             </div>
                         </Link>
                     }).slice(0, 5)
-            } */}
+            }
         </div>
     )
 };

@@ -5,23 +5,23 @@ import Comments from '../../components/comments/Comments';
 import { formatDate } from '@/utils/date';
 import { getBase64 } from '@/utils/get-Base64';
 
-/* const getPost = async (slug) => {
-    const response = await fetch(`https://blog-app-blond-tau.vercel.app/api/posts/${slug}`);
+const getPost = async (slug) => {
+    const response = await fetch(`https://blog-app-git-main-larissioanas-projects.vercel.app/api/posts/${slug}`);
     if (!response.ok) {
         throw new Error("Failed fetching categories")
     }
     return response.json()
 };
- */
+
 const SinglePage = async ({ params }) => {
-    /*  const { slug } = params;
-     const post = await getPost(slug);
-     const imageUrl = await getBase64(post.img);
-     const imageUrlUser = await getBase64(post.user.image);
-  */
+    const { slug } = params;
+    const post = await getPost(slug);
+    const imageUrl = await getBase64(post.img);
+    const imageUrlUser = await getBase64(post.user.image);
+
     return (
         <div className={styles.container}>
-            {/*  <div className={styles.infoContainer}>
+            <div className={styles.infoContainer}>
                 <div className={styles.textContainer}>
                     {
                         post.title &&
@@ -55,8 +55,8 @@ const SinglePage = async ({ params }) => {
                         <Image src={post.img} alt={post.title} blurDataURL={imageUrl} fill loading='eager' className={styles.image} />
                     }
                 </div>
-            </div> */}
-            {/*    <div className={styles.content}>
+            </div>
+            <div className={styles.content}>
                 <div className={styles.post}>
                     {
                         post.desc &&
@@ -73,7 +73,7 @@ const SinglePage = async ({ params }) => {
                     </div>
                 </div>
                 <Menu slug={slug} />
-            </div> */}
+            </div>
         </div>
     )
 };

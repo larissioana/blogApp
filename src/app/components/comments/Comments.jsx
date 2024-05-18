@@ -8,7 +8,7 @@ import { formatDate } from '@/utils/date';
 import Spinner from '../spinner/Spinner';
 import { useState } from 'react';
 
-/* const fetchData = async (url) => {
+const fetchData = async (url) => {
     const response = await fetch(url);
     const data = await response.json();
 
@@ -18,13 +18,13 @@ import { useState } from 'react';
     }
 
     return data;
-}; */
+};
 
 const Comments = ({ postSlug }) => {
     const [desc, setDesc] = useState("");
 
-    //const { status } = useSession();
-    // const { data, mutate, isLoading } = useSWR(`https://blog-app-blond-tau.vercel.app/api/comments?postSlug=${postSlug}`, fetchData);
+    const { status } = useSession();
+    const { data, mutate, isLoading } = useSWR(`https://blog-app-git-main-larissioanas-projects.vercel.app/api/comments?postSlug=${postSlug}`, fetchData);
 
     const handleChange = (e) => {
         setDesc(e.target.value);
@@ -41,7 +41,7 @@ const Comments = ({ postSlug }) => {
      */
     return (
         <>
-            {/*   {
+            {
                 !isLoading ?
                     <div className={styles.container}>
                         <h1>Comments</h1>
@@ -85,7 +85,7 @@ const Comments = ({ postSlug }) => {
                     <div className={styles.spinner}>
                         <Spinner />
                     </div>
-            } */}
+            }
         </>
     )
 };
