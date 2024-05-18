@@ -6,7 +6,7 @@ import { formatDate } from '@/utils/date';
 import { getBase64 } from '@/utils/get-Base64';
 
 const getPost = async (slug) => {
-    const response = await fetch(`https://blog-app-git-main-larissioanas-projects.vercel.app/api/posts/${slug}`);
+    const response = await fetch(`https://blog-app-nine-sand.vercel.app/api/posts/${slug}`);
     if (!response.ok) {
         throw new Error("Failed fetching categories")
     }

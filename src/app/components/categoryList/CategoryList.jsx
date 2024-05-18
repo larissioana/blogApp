@@ -3,7 +3,7 @@ import styles from './categoryList.module.css';
 import Image from 'next/image';
 
 const getCategories = async () => {
-    const response = await fetch("https://blog-app-git-main-larissioanas-projects.vercel.app/api/categories");
+    const response = await fetch("https://blog-app-nine-sand.vercel.app/api/categories");
     if (!response.ok) {
         throw new Error("Failed fetching categories")
     }

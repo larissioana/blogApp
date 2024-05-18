@@ -3,7 +3,7 @@ import Pagination from '../pagination/Pagination';
 import styles from './cardList.module.css';
 
 const getPosts = async (page, cat) => {
-    const response = await fetch(`https://blog-app-git-main-larissioanas-projects.vercel.app/api/posts?page=${page}&cat=${cat || ""}`);
+    const response = await fetch(`https://blog-app-nine-sand.vercel.app/api/posts?page=${page}&cat=${cat || ""}`);
 
     if (!response.ok) {
         console.log("Failed fetching categories")

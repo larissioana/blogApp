@@ -5,7 +5,7 @@ import styles from './menuPosts.module.css';
 import { formatDate } from "@/utils/date";
 
 const getPosts = async () => {
-    const response = await fetch(`https://blog-app-git-main-larissioanas-projects.vercel.app/api/posts/`, {
+    const response = await fetch(`https://blog-app-nine-sand.vercel.app/api/posts/`, {
         cache: "no-cache"
     });
     if (!response.ok) {
