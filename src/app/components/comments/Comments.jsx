@@ -31,7 +31,7 @@ const Comments = ({ postSlug }) => {
     };
 
     const handleSubmit = async () => {
-        await fetch("https://blogapp-zyp2.onrender.com/api/comments", {
+        await fetch("https://blog-app-beige-psi.vercel.app/api/comments", {
             method: "POST",
             body: JSON.stringify({ desc, postSlug }),
         });
