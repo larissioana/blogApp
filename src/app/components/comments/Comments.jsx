@@ -58,7 +58,7 @@ const Comments = ({ postSlug }) => {
                                 </div>
                                 :
                                 !isLoading && <div className={styles.linkContainer}>
-                                    <Link rel="preload" href="/login" className={styles.link}>Login to write a comment</Link>
+                                    <Link href="/login" className={styles.link}>Login to write a comment</Link>
                                 </div>
                         }
                         <div className={styles.comments}>

@@ -21,7 +21,7 @@ const Card = async ({ posts }) => {
                 </div>
                 <h1 className={styles.postTitle}>{posts.title}</h1>
                 <div className={styles.postDesc} dangerouslySetInnerHTML={{ __html: posts.desc.length > 100 ? `${posts.desc.slice(0, 100)}...` : posts.desc }} />
-                <Link rel="preload" href={`/post/${posts.slug}`} className={styles.link}>Read more</Link>
+                <Link href={`/post/${posts.slug}`} prefetch={true} className={styles.link}>Read more</Link>
             </div>
         </div >
     )
