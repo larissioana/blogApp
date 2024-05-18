@@ -31,7 +31,7 @@ const Comments = ({ postSlug }) => {
     };
 
     const handleSubmit = async () => {
-        await fetch("https://blog-app-blond-tau.vercel.app/api/comments", {
+        await fetch("https://blog-app-git-main-larissioanas-projects.vercel.app/api/comments", {
             method: "POST",
             body: JSON.stringify({ desc, postSlug }),
         });
