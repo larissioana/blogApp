@@ -14,6 +14,13 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <link
+        rel="preload"
+        href="/_next/static/media/c9a5bc6a7c948fb0-s.p.woff2"
+        as="font"
+        type="font/woff2"
+        crossOrigin="anonymous"
+      />
       <body className={inter.className}>
         <AuthProvider>
           <ThemeContextProvider>
