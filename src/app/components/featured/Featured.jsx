@@ -38,7 +38,7 @@ const Featured = async () => {
 
                         <p className={styles.postDesc} dangerouslySetInnerHTML={{ __html: post.desc.length > 100 ? `${post.desc.slice(0, 100)}...` : post.desc }} />
                     }
-                    <Link href={'/post/6'} className={styles.btn}>Read more</Link>
+                    <Link rel="preload" href={'/post/6'} className={styles.btn}>Read more</Link>
                 </div>
             </div>
         </div>

@@ -13,10 +13,10 @@ const Navbar = () => {
                 <Image src="/instagram.png" alt="instagram" width={24} height={24} />
                 <Image src="/youtube.png" alt="youtube" width={24} height={24} />
             </div>
-            <Link href={"/"} className={styles.logo}>newBlog</Link>
+            <Link rel="preload" href={"/"} className={styles.logo}>newBlog</Link>
             <div className={styles.links}>
                 <ThemeToggle />
-                <Link className={styles.link} href="/">Homepage</Link>
+                <Link rel="preload" className={styles.link} href="/">Homepage</Link>
                 <AuthLinks />
             </div>
         </div>

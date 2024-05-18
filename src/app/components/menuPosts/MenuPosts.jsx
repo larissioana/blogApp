@@ -20,7 +20,7 @@ const MenuPosts = async () => {
             {
                 posts?.posts.filter((post) => post.views > 5)
                     .map((post) => {
-                        return <Link href={`/post/${post.slug}`} className={styles.item} key={post.id}>
+                        return <Link rel="preload" href={`/post/${post.slug}`} className={styles.item} key={post.id}>
                             {
                                 post.user.image &&
                                 <div className={styles.imageContainer}>
