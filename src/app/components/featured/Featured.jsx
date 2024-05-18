@@ -24,23 +24,23 @@ const Featured = async () => {
                 <b>Hey, Larisa here! </b>
                 Discover my stories and creative ideas.
             </h1>
-            <div className={styles.post} key={post.id}>
-                {/*  {
+            {/*    <div className={styles.post} key={post.id}>
+               {
                     post.img &&
                     <div className={styles.imgContainer}>
                         <Image src={post.img} priority className={styles.postImg} blurDataURL={imageUrl} alt={post.title} fill />
                     </div>
-                } */}
+                } 
                 <div className={styles.textContainer}>
-                    <h1 className={styles.postTitle}>{post.title}</h1>
-                    {/*  {
+                     <h1 className={styles.postTitle}>{post.title}</h1> 
+                   {
                         post.desc &&
 
                         <p className={styles.postDesc} dangerouslySetInnerHTML={{ __html: post.desc.length > 100 ? `${post.desc.slice(0, 100)}...` : post.desc }} />
                     }
-                    <Link href={'/post/6'} className={styles.btn}>Read more</Link> */}
+                    <Link href={'/post/6'} className={styles.btn}>Read more</Link> 
                 </div>
-            </div>
+            </div> */}
         </div>
     )
 };

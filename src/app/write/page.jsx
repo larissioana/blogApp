@@ -26,7 +26,7 @@ const WritePage = () => {
 
     const router = useRouter();
 
-    useEffect(() => {
+    /* useEffect(() => {
         const uploadFile = () => {
             const name = new Date().getTime() + file.name;
             const storageRef = ref(storage, name);
@@ -69,7 +69,7 @@ const WritePage = () => {
             .trim()
             .replace(/[^\w\s-]/g, "")
             .replace(/[\s_-]+/g, "-")
-            .replace(/^-+|-+$/g, "");
+            .replace(/^-+|-+$/g, ""); */
 
     /*   const handleSubmit = async () => {
           const res = await fetch("https://blog-app-blond-tau.vercel.app/api/posts", {
@@ -90,7 +90,7 @@ const WritePage = () => {
       }; */
     return (
         <div className={styles.container}>
-            <input
+            {/* <input
                 type="text"
                 onChange={handleChangeTitle}
                 placeholder="Title"
@@ -138,7 +138,7 @@ const WritePage = () => {
                 value={value}
                 onChange={setValue}
                 placeholder='Tell your story...'
-            />
+            /> */}
 
             {/*  <button
                 className={styles.publish}
