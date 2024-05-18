@@ -3,7 +3,7 @@ import Pagination from '../pagination/Pagination';
 import styles from './cardList.module.css';
 
 const getPosts = async (page, cat) => {
-    const response = await fetch(`https://blogapp-zyp2.onrender.com/api/posts?page=${page}&cat=${cat || ""}`);
+    const response = await fetch(`https://blog-app-beige-psi.vercel.app/api/posts?page=${page}&cat=${cat || ""}`);
 
     if (!response.ok) {
         console.log("Failed fetching categories")

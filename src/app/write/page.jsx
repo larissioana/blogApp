@@ -72,7 +72,7 @@ const WritePage = () => {
             .replace(/^-+|-+$/g, "");
 
     const handleSubmit = async () => {
-        const res = await fetch("https://blogapp-zyp2.onrender.com/api/posts", {
+        const res = await fetch("https://blog-app-beige-psi.vercel.app/api/posts", {
             method: "POST",
             body: JSON.stringify({
                 title,
@@ -131,14 +131,15 @@ const WritePage = () => {
                         </button>
                     </div>
                 }
-                <ReactQuill
-                    theme="bubble"
-                    className={styles.textArea}
-                    value={value}
-                    onChange={setValue}
-                    placeholder='Tell your story...'
-                />
             </div>
+            <ReactQuill
+                theme="bubble"
+                className={styles.textArea}
+                value={value}
+                onChange={setValue}
+                placeholder='Tell your story...'
+            />
+
             <button
                 className={styles.publish}
                 onClick={handleSubmit}

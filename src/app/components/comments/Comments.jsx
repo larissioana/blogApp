@@ -24,7 +24,7 @@ const Comments = ({ postSlug }) => {
     const [desc, setDesc] = useState("");
 
     const { status } = useSession();
-    const { data, mutate, isLoading } = useSWR(`http://localhost:3000/api/comments?postSlug=${postSlug}`, fetchData);
+    const { data, mutate, isLoading } = useSWR(`https://blog-app-beige-psi.vercel.app/api/comments?postSlug=${postSlug}`, fetchData);
 
     const handleChange = (e) => {
         setDesc(e.target.value);

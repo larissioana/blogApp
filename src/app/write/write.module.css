@@ -17,13 +17,13 @@
 {
     display: flex;
     gap: 20px;
-    height: 700px;
-    position: relative;
+    padding: 0px 50px;
+    width: 100%;
 }
   
   .button,
   .addButton {
-    width: 36px;
+    min-width: 36px;
     height: 36px;
     border-radius: 50%;
     background-color: transparent;
@@ -43,10 +43,7 @@
     display: flex;
     gap: 20px;
     background-color: var(--bg);
-    position: absolute;
-    z-index: 999;
     width: 100%;
-    left: 50px;
   }
 
   .img
@@ -69,6 +66,8 @@
   
   .textArea {
     width: 100%;
+    margin-top: 2rem;
+    padding: 0px 30px;
   }
   
   .publish{

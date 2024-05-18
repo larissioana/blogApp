@@ -3,9 +3,10 @@ import styles from './page.module.css';
 import Menu from '../../components/menu/Menu';
 import Comments from '../../components/comments/Comments';
 import { formatDate } from '@/utils/date';
+import { getBase64 } from '@/utils/get-Base64';
 
 const getPost = async (slug) => {
-    const response = await fetch(`https://blogapp-zyp2.onrender.com/api/posts/${slug}`);
+    const response = await fetch(`https://blog-app-beige-psi.vercel.app/api/posts/${slug}`);
     if (!response.ok) {
         throw new Error("Failed fetching categories")
     }
@@ -15,6 +16,8 @@ const getPost = async (slug) => {
 const SinglePage = async ({ params }) => {
     const { slug } = params;
     const post = await getPost(slug);
+    const imageUrl = await getBase64(post.img);
+    const imageUrlUser = await getBase64(post.user.image);
 
     return (
         <div className={styles.container}>
@@ -28,7 +31,7 @@ const SinglePage = async ({ params }) => {
                         <div className={styles.userImageContainer}>
                             {
                                 post.user.image &&
-                                <Image src={post.user.image} alt="" fill loading="eager" className={styles.image} />
+                                <Image src={post.user.image} alt={post.user.name} fill blurDataURL={imageUrlUser} loading="eager" className={styles.image} />
                             }
                         </div>
                         {
@@ -49,7 +52,7 @@ const SinglePage = async ({ params }) => {
                 <div className={styles.imageContainer}>
                     {
                         post.img &&
-                        <Image src={post.img} alt="" fill loading='eager' className={styles.image} />
+                        <Image src={post.img} alt={post.title} blurDataURL={imageUrl} fill loading='eager' className={styles.image} />
                     }
                 </div>
             </div>

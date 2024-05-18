@@ -2,14 +2,16 @@ import Link from 'next/link';
 import styles from './card.module.css';
 import Image from 'next/image';
 import { formatDate } from '@/utils/date';
+import { getBase64 } from '@/utils/get-Base64';
 
-const Card = ({ posts }) => {
+const Card = async ({ posts }) => {
+    const imageUrl = await getBase64(posts.img);
     return (
         <div className={styles.container}>
             <div className={styles.imageContainer}>
                 {
                     posts.img &&
-                    <Image src={posts.img} fill alt={posts.title} priority className={styles.img} />
+                    <Image src={posts.img} fill alt={posts.title} blurDataURL={imageUrl} priority className={styles.img} />
                 }
             </div>
             <div className={styles.textContainer}>
