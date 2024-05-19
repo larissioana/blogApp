@@ -1,7 +1,7 @@
 "use client";
 import { useRouter } from 'next/navigation';
 import styles from './pagination.module.css';
-import Link from 'next/link';
+import { useEffect } from 'react';
 
 const Pagination = ({ page, hasPrev, hasNext }) => {
     const router = useRouter();
@@ -14,6 +14,15 @@ const Pagination = ({ page, hasPrev, hasNext }) => {
         router.push(`?page=${page - 1}`);
     };
 
+    useEffect(() => {
+        // Prefetch the next and previous pages
+        if (hasNext) {
+            router.prefetch(`?page=${page + 1}`);
+        }
+        if (hasPrev) {
+            router.prefetch(`?page=${page - 1}`);
+        }
+    }, [page, hasNext, hasPrev]);
 
     return (
         <div className={styles.container}>
