@@ -6,6 +6,7 @@ import { getBase64 } from '@/utils/get-Base64';
 
 const Card = async ({ posts }) => {
     const imageUrl = await getBase64(posts.img);
+
     return (
         <div className={styles.container}>
             <div className={styles.imageContainer}>
