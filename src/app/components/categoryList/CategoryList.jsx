@@ -19,7 +19,7 @@ const CategoryList = async () => {
             <div className={styles.categories}>
                 {
                     data?.map((category) => {
-                        return <Link key={category.id} refetch={true} href={`/blog?cat=${category.slug}`} className={`${styles.category} ${styles[category.slug]}`}>
+                        return <Link key={category.id} prefetch={true} href={`/blog?cat=${category.slug}`} className={`${styles.category} ${styles[category.slug]}`}>
                             {
                                 category.img &&
                                 <Image
